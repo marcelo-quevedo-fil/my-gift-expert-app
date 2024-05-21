@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
-import { getGifs as helperGetGifs } from "../helpers/getGifs";
+import getGifs from "../helpers/getGifs";
 
-export const useGetGifs = (value: string) => {
+function useGetGifs(value: string) {
   const [gifs, setGifs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getGifs = async () => {
-    setGifs(await helperGetGifs(value));
+  const getGifsAndSetIsLoading = async () => {
+    setGifs(await getGifs(value));
     setIsLoading(false);
   };
 
   //it renders only the first time
   useEffect(() => {
-    getGifs();
+    getGifsAndSetIsLoading();
   }, []);
 
   return {
     gifs,
     isLoading,
   };
-};
+}
+
+export default useGetGifs;
