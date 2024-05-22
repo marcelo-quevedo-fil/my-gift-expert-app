@@ -1,5 +1,4 @@
-import SearchBar from "./components/SearchBar";
-import Grid from "./components/Grid";
+import { Grid, SearchBar } from "./components";
 
 import { useState } from "react";
 
