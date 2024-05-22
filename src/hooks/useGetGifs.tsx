@@ -10,7 +10,9 @@ function useGetGifs(value: string) {
     setIsLoading(false);
   };
 
-  //it renders only the first time
+  // in this case it renders only the first time []
+  // but I can make it work to trigger side effects
+  // when specific values changed
   useEffect(() => {
     getGifsAndSetIsLoading();
   }, []);

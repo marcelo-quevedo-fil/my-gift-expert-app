@@ -1,5 +1,5 @@
 import GridItem from "./GirdItem";
-import useGetGifs from "./hooks/useGetGifs";
+import useGetGifs from "../hooks/useGetGifs";
 
 interface GridProps {
   value: string;
